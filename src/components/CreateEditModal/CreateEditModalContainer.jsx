@@ -42,18 +42,24 @@ const CreateEditModalContainer = ({
 
   const handleEditTodoItem = useCallback(
     (values) => {
-      dispatch(
-        editTodo({
-          id: currentData.id,
-          title: values.title,
-          complete: values.complete,
-          description: values.description,
-          date: values.date,
-        })
-      );
+      if (todos.some((item) => values.date === item.date)) {
+        dispatch(
+          setSnackBar("Задача с такой датой уже существует, измените дату")
+        );
+      } else {
+        dispatch(
+          editTodo({
+            id: currentData.id,
+            title: values.title,
+            complete: values.complete,
+            description: values.description,
+            date: values.date,
+          })
+        );
 
-      onModalAddEditClose();
-      dispatch(getCurrentTodo(""));
+        onModalAddEditClose();
+        dispatch(getCurrentTodo(""));
+      }
     },
     [dispatch, currentData.id, onModalAddEditClose]
   );
