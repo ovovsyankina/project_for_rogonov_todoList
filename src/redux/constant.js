@@ -1,0 +1,14 @@
+export const ADD_TODO = "ADD_TODO";
+export const DELETE_TODO = "DELETE_TODO";
+export const COMPLETE_TODO = "COMPLETE_TODO";
+export const CHECK_ALL_TODO = "CHECK_ALL_TODO";
+export const CLEAR_COMPLETED = "CLEAR_COMPLETED";
+export const EDIT_TODO_ITEM = "EDIT_TODO_ITEM";
+
+export const ACTIVE_FILTER = "ACTIVE_FILTER";
+export const COMPLETED_FILTER = "COMPLETED_FILTER";
+export const ALL_FILTER = "ALL_FILTER";
+
+export const CURRENT_TODO = "CURRENT_TODO";
+
+export const SET_SNACKBAR_TEXT = "SET_SNACKBAR_TEXT";

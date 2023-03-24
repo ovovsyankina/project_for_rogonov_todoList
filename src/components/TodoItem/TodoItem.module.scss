@@ -1,0 +1,172 @@
+@use "../../style/media.scss" as *;
+@use "../../style/color" as *;
+
+.todo {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.text_task {
+  width: calc(100% - 100px);
+  font-family: sans-serif;
+  word-wrap: break-word;
+  border-bottom: 3px solid $black-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text_task_input {
+  all: unset;
+  width: calc(100% - 100px);
+  font-family: sans-serif;
+  word-wrap: break-word;
+  border-bottom: 3px solid $black-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.todo_delete {
+  width: 30px;
+  min-width: 33px;
+  height: 30px;
+  min-height: 33px;
+  margin: auto 0;
+  font-size: 20px;
+  justify-content: center;
+  background-image: url(../../../public/img/close_111152.svg);
+  background-position: center;
+  background-color: $white-color;
+  background-size: 140%;
+  background-repeat: repeat-x;
+  border: none;
+  transition: 400ms;
+  transform: scale(1);
+
+  &:hover {
+    transition: 800ms;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+.todo_checkbox:checked + label + div {
+  color: $grey-color;
+  text-decoration: line-through;
+  & + div {
+    color: $grey-color;
+    text-decoration: line-through;
+  }
+  &:hover {
+    border-color: $black-color;
+  }
+}
+
+.todo_checkbox {
+  display: none;
+
+  &:hover {
+    background-color: $white-color;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+}
+
+.todo_checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  border: 2px solid $black-color;
+  border-radius: 5px;
+  transition: 200ms;
+  transform: scale(1);
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  @include tablet {
+    width: 22px;
+    height: 22px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+
+.todo_checkbox:checked + label::before {
+  background-color: $white-color;
+  background-image: url(../../../public/img/check_dogovor.svg);
+  background-size: 75%;
+  border-color: $black-color;
+}
+
+.todo_checkbox:hover + label::before {
+  border-color: $grey-color;
+}
+
+.todo_checkbox:checked:hover + label::before {
+  border-color: $black-color;
+
+  @include tablet {
+    width: 22px;
+    height: 22px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+
+.label_textTask {
+  width: 30px;
+  height: 30px;
+  min-width: 33px;
+  min-height: 33px;
+  margin: auto 0 auto;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include tablet {
+    width: 22px;
+    height: 22px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+
+.edit_button {
+  min-width: 30px;
+  min-height: 27px;
+  width: 30px;
+  height: 27px;
+  margin: auto 10px;
+  background-image: url(../../../public/img/edit_icon.svg);
+  background-repeat: no-repeat;
+  border: none;
+  background-color: white;
+}
+
+.date {
+  display: flex;
+  width: 105px;
+  margin-left: 10px;
+  font-size: 15px;
+  justify-content: center;
+  flex-direction: column;
+}

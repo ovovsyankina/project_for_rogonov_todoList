@@ -1,0 +1,59 @@
+@use "../../style/media.scss" as *;
+@use "../../style/color" as *;
+
+.root {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+.list_todo {
+  display: flex;
+  width: 1170px;
+  margin-bottom: 30%;
+  padding: 30px 30px 60px 30px;
+  font-size: 30px;
+  background-color: $white-color;
+  border: 3px solid $black-color;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  @include screen {
+    width: 95%;
+  }
+
+  @include tablet {
+    width: 95%;
+    padding: 10px 10px 40px 10px;
+    font-size: 20px;
+  }
+}
+
+.list_items {
+  width: 100%;
+}
+
+.style_alert {
+  all: unset;
+  position: absolute;
+  height: 30px;
+  width: 1100px;
+  font-family: mon;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include screen {
+    width: calc(87% - 60px);
+  }
+
+  @include tablet {
+    width: calc(95% - 20px);
+    font-size: 19px;
+  }
+}

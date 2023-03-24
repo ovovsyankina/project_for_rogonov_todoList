@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "mon";
+}
+
+@font-face {
+  font-family: "mon-Bold";
+  src: url(./fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: "mon";
+  src: url(./fonts/Montserrat-Medium.ttf);
+}
+
+#root {
+  position: relative;
+  width: 100%;
+}
