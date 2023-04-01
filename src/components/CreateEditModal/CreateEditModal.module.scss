@@ -19,6 +19,12 @@
   padding: 0 10px;
   margin-top: 5px;
   border-radius: 5px;
+
+  &:focus {
+    color: rgb(160, 58, 20);
+    outline: 3px solid orange;
+    border: none;
+  }
 }
 
 .field_input_description {
@@ -28,9 +34,63 @@
   padding: 0 10px;
   margin-top: 5px;
   border-radius: 5px;
+
+  &:focus {
+    color: rgb(160, 58, 20);
+    outline: 3px solid orange;
+    border: none;
+  }
 }
 
 .error_message {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.add_button {
+  color: black;
+  background-color: #f5e7d4;
+  border-color: #CD853F;
+  border-radius: 5px;
+  padding: 5px;
+
+  &:hover {
+    cursor: crosshair;
+    color: white;
+    background-color: #00BFFF;
+    border-color: blue;
+  }
+}
+
+.quick_view_close_button {
+  color: white;
+  background-color: gray;
+  border-color: #5a5959;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  left: 95%;
+  top: 3%;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #e46e6e;
+    border-color: #A52A2A;
+  }
+}
+
+.buttons_checked {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.buttons_checked:nth-child(3) {
+  margin-left: 10%;
+}
+
+.buttons_checked:nth-child(2n+1):hover {
+  cursor: pointer;
 }

@@ -39,6 +39,13 @@ const CreateEditModal = ({
             <Form>
               <div className={styles.root}>
                 <div className={styles.field_content}>
+                  <button
+                    type="reset"
+                    onClick={onModalAddEditClose}
+                    className={styles.quick_view_close_button}
+                  >
+                    X
+                  </button>
                   <label htmlFor="title" className={styles.field_name}>
                     Название задачи:
                   </label>
@@ -68,8 +75,9 @@ const CreateEditModal = ({
                         setFieldValue("complete", e.currentTarget.checked);
                       }}
                       checked={values.complete}
+                      className={styles.buttons_checked}
                     />
-                    <div>Выполнено</div>
+                    <div className={styles.buttons_checked}>Выполнено</div>
                     <input
                       type="radio"
                       id="no"
@@ -78,8 +86,9 @@ const CreateEditModal = ({
                         setFieldValue("complete", !e.currentTarget.checked)
                       }
                       checked={!values.complete}
+                      className={styles.buttons_checked}
                     />
-                    <div>Не выполнено</div>
+                    <div className={styles.buttons_checked}>Не выполнено</div>
                   </div>
                 </div>
 
@@ -127,13 +136,6 @@ const CreateEditModal = ({
                     Сохранить
                   </button>
                 )}
-                <button
-                  type="reset"
-                  onClick={onModalAddEditClose}
-                  className={styles.quick_view_close_button}
-                >
-                  Закрыть
-                </button>
               </div>
             </Form>
           )}
