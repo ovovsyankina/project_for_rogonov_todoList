@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, checkAllTodo } from "../../redux/action";
+import { addTodo } from "../../redux/action";
 import TodoInput from "./TodoInput";
 
 const TodoInputContainer = ({ onModalAddOpen }) => {
@@ -27,15 +27,10 @@ const TodoInputContainer = ({ onModalAddOpen }) => {
 
   const handleKeyDownAddNewTodo = (e) => addNewTodo(e);
 
-  const handleCheckAll = useCallback(() => {
-    dispatch(checkAllTodo());
-  }, [dispatch]);
-
   return (
     <TodoInput
       value={value}
       addNewTodo={addNewTodo}
-      onCheckAll={handleCheckAll}
       onChangeInput={handleChangeInput}
       onKeyDownAddNewTodo={handleKeyDownAddNewTodo}
       onModalAddOpen={onModalAddOpen}

@@ -1,15 +1,5 @@
 @use "../../style/media.scss" as *;
 
-.fon {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background-image: url(../../../public/img/fon.jpg);
-  opacity: 0.5;
-}
-
 .body {
   display: flex;
   align-items: center;

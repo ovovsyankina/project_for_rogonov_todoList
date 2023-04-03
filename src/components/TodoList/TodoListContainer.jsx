@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import TodoList from "./TodoList";
 import { todosSelector, filterSelector } from "../../redux/selector";
@@ -24,13 +24,34 @@ const TodoListContainer = ({ onModalEditOpen }) => {
     return index;
   }, [todos]);
 
+  const [isFilterDateDown, setFilterDateDown] = useState(true);
+
+  const filterTodos = useMemo(() => {
+    if (isFilterDateDown) {
+      return [...filterTodo].sort((a, b) => (a.date < b.date ? 1 : -1));
+    } else {
+      return [...filterTodo].sort((a, b) => (a.date < b.date ? -1 : 1));
+    }
+  }, [filterTodo, isFilterDateDown]);
+  const getOption = (e) => {
+    const option = e.target.value;
+    if (option === "dateDown") {
+      return setFilterDateDown(true);
+    } else if (option === "dateUp") {
+      return setFilterDateDown(false);
+    }
+    console.log(option);
+    return option;
+  };
+
   return (
     <TodoList
-      todos={filterTodo}
+      todos={filterTodos}
       filter={filter}
       counter={counter}
       sharedTodos={todos}
       onModalEditOpen={onModalEditOpen}
+      getOption={getOption}
     />
   );
 };

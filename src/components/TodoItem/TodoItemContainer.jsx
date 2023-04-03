@@ -24,6 +24,18 @@ const TodoItemContainer = ({ todo, onModalEditOpen }) => {
     [dispatch, todo, onModalEditOpen]
   );
 
+  const [open, setOpen] = useState(false);
+  const handleClickOpenDialog = () => {
+    setOpen(true);
+  };
+
+  const handleCloseDialogYes = () => {
+    setOpen(false);
+    handleDelete();
+  };
+  const handleCloseDialog = () => {
+    setOpen(false);
+  };
   return (
     <TodoItem
       todo={todo}
@@ -31,6 +43,10 @@ const TodoItemContainer = ({ todo, onModalEditOpen }) => {
       onDelete={handleDelete}
       onCheck={handleCheck}
       onEditCurrentTodo={handleEditCurrentTodo}
+      onClickOpenDialog={handleClickOpenDialog}
+      onCloseDialog={handleCloseDialog}
+      open={open}
+      onCloseDialogYes={handleCloseDialogYes}
     />
   );
 };

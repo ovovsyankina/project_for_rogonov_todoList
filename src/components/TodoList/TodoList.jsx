@@ -4,12 +4,25 @@ import { array, string, number } from "prop-types";
 import styles from "./TodoList.module.scss";
 import FilterContainer from "../Filters/FilterContainer";
 
-const TodoList = ({ todos, filter, counter, sharedTodos, onModalEditOpen }) => {
+const TodoList = ({
+  todos,
+  filter,
+  counter,
+  sharedTodos,
+  onModalEditOpen,
+  getOption,
+}) => {
   return (
     <div className={styles.root}>
       <FilterContainer counter={counter} filter={filter} />
 
       <div className={styles.list_todo}>
+        <div className={styles.select}>
+          <select name="category-list" id="category-list" onChange={getOption}>
+            <option value="dateDown">По дате вниз</option>
+            <option value="dateUp">По дате вверх</option>
+          </select>
+        </div>
         <ul className={styles.list_items}>
           {todos &&
             todos.length > 0 &&

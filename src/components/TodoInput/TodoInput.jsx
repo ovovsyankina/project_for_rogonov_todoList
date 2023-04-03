@@ -11,10 +11,7 @@ const TodoInput = ({
 }) => {
   return (
     <div className={styles.root}>
-      <label className={styles.all_completed} onClick={onCheckAll} />
-
       <button className={styles.input_text} onClick={onModalAddOpen}>
-        {" "}
         Добавить задачу
       </button>
       {/* <input

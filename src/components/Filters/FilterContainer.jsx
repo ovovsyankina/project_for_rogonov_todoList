@@ -4,6 +4,7 @@ import { number, string } from "prop-types";
 import {
   activeFilter,
   allFilter,
+  checkAllTodo,
   clearCompleted,
   completedFilter,
 } from "../../redux/action";
@@ -14,6 +15,10 @@ const FilterContainer = ({ counter, filter }) => {
 
   const handleClearCompleted = useCallback(() => {
     dispatch(clearCompleted());
+    document.getElementById("fon").classList.add("dop_fon");
+    setTimeout(() => {
+      document.getElementById("fon").classList.remove("dop_fon");
+    }, 2000);
   }, [dispatch]);
 
   const handleActiveFilter = useCallback(() => {
@@ -28,6 +33,10 @@ const FilterContainer = ({ counter, filter }) => {
     dispatch(completedFilter());
   }, [dispatch]);
 
+  const handleCheckAll = useCallback(() => {
+    dispatch(checkAllTodo());
+  }, [dispatch]);
+
   return (
     <Filter
       onClearCompleted={handleClearCompleted}
@@ -36,6 +45,7 @@ const FilterContainer = ({ counter, filter }) => {
       onCompletedFilter={handleCompletedFilter}
       counter={counter}
       filter={filter}
+      onCheckAll={handleCheckAll}
     />
   );
 };

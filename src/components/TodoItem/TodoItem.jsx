@@ -1,8 +1,25 @@
 import React from "react";
 import { object, func, bool, string } from "prop-types";
 import styles from "./TodoItem.module.scss";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 
-const TodoItem = ({ todo, onDelete, onCheck, onEditCurrentTodo }) => {
+const TodoItem = ({
+  todo,
+  onDelete,
+  onCheck,
+  onEditCurrentTodo,
+  onClickOpenDialog,
+  onCloseDialog,
+  onCloseDialogYes,
+  open,
+}) => {
   return (
     <li className={styles.todo}>
       <input
@@ -23,7 +40,25 @@ const TodoItem = ({ todo, onDelete, onCheck, onEditCurrentTodo }) => {
         onClick={onEditCurrentTodo}
         className={styles.edit_button}
       ></button>
-      <button className={styles.todo_delete} onClick={onDelete} />
+
+      <button className={styles.todo_delete} onClick={onClickOpenDialog} />
+      <Dialog
+        open={open}
+        onClose={onCloseDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Хотите ли вы удалить задачу?"}
+        </DialogTitle>
+
+        <DialogActions>
+          <Button onClick={onCloseDialogYes}>Да</Button>
+          <Button onClick={onCloseDialog} autoFocus>
+            Нет
+          </Button>
+        </DialogActions>
+      </Dialog>
     </li>
   );
 };

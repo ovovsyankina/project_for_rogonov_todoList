@@ -160,6 +160,14 @@
   background-repeat: no-repeat;
   border: none;
   background-color: white;
+  transition: 400ms;
+  transform: scale(1);
+
+  &:hover {
+    transition: 800ms;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
 
 .date {
