@@ -42,18 +42,18 @@ const TodoList = ({
         </ul>
 
         {counter === 0 && sharedTodos.length === 0 && (
-          <div className={styles.style_alert}>You haven't added any tasks</div>
+          <div className={styles.style_alert}>У вас нет добавленных задач</div>
         )}
 
         {counter === 0 && filter === "active" && sharedTodos.length !== 0 && (
-          <div className={styles.style_alert}>There is no active tasks</div>
+          <div className={styles.style_alert}>Нет запланированных задач</div>
         )}
 
         {counter === sharedTodos.length &&
           filter === "completed" &&
           sharedTodos.length !== 0 && (
             <div className={styles.style_alert}>
-              There is no completed tasks
+              Нет выполненных задач
             </div>
           )}
       </div>

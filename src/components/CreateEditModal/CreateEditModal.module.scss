@@ -49,16 +49,14 @@
 
 .add_button {
   color: black;
-  background-color: #f5e7d4;
-  border-color: #CD853F;
   border-radius: 5px;
   padding: 5px;
 
   &:hover {
-    cursor: crosshair;
-    color: white;
-    background-color: #00BFFF;
-    border-color: blue;
+    cursor: pointer;
+    color: black;
+    background-color: #f5e7d4;
+    border-color: #CD853F;
   }
 }
 
