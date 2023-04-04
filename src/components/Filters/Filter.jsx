@@ -22,7 +22,7 @@ const Filter = ({
             })}
             onClick={onAllFilter}
           >
-            All
+            Все
           </button>
 
           <button
@@ -31,7 +31,7 @@ const Filter = ({
             })}
             onClick={onActiveFilter}
           >
-            Active
+            Запланированные
           </button>
 
           <button
@@ -40,19 +40,19 @@ const Filter = ({
             })}
             onClick={onCompletedFilter}
           >
-            Completed
+            Выполненные
           </button>
         </div>
         <span className={styles.line_filter} />
         <div className={styles.filter_dop}>
           <button className={styles.all_completed} onClick={onCheckAll}>
-            All Completed
+            Отметить все
           </button>
           <button className={styles.clear_completed} onClick={onClearCompleted}>
-            Clear Completed
+            Удалить выполненные
           </button>
           <div className={styles.count}>
-            {counter} item{counter > 1 ? "s" : ""} left
+            {counter} задач(и){counter > 1 ? "s" : ""} осталось
           </div>{" "}
         </div>
       </div>
