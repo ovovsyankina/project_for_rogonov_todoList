@@ -51,9 +51,7 @@ const Filter = ({
           <button className={styles.clear_completed} onClick={onClearCompleted}>
             Удалить выполненные
           </button>
-          <div className={styles.count}>
-            {counter} задач(и){counter > 1 ? "s" : ""} осталось
-          </div>{" "}
+          <div className={styles.count}>{counter} задач(и) осталось</div>{" "}
         </div>
       </div>
     </div>
