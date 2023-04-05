@@ -26,7 +26,7 @@ const CreateEditModalContainer = ({
       } else {
         dispatch(
           addTodo({
-            id: values.id,
+            id: currentData.id,
             title: values.title,
             complete: values.complete,
             description: values.description,
@@ -42,7 +42,11 @@ const CreateEditModalContainer = ({
 
   const handleEditTodoItem = useCallback(
     (values) => {
-      if (todos.some((item) => values.date === item.date)) {
+      if (
+        todos.some(
+          (item) => values.date === item.date && currentData.id !== item.id
+        )
+      ) {
         dispatch(
           setSnackBar("Задача с такой датой уже существует, измените дату")
         );
